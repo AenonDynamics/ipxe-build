@@ -11,7 +11,8 @@ RUN set -xe \
 
 # copy files
 COPY ipxebuild.sh /
-COPY ipxe.conf /tmp/build/src
+COPY ipxe.conf /tmp/build/
+COPY config/ /tmp/build/src/config
 
 # parse CMD input
 ENTRYPOINT [ "/bin/bash", "-c" ]

@@ -14,12 +14,21 @@ Just run `build.sh` to trigger the build - this will invoke the following proced
 
 thats it! ;)
 
+Features
+------------------------------
+
+* Easy embed custom ipxe configuration
+* Add custom brandings
+
 
 Config
 ------------------------------
 
 * `ipxebuild.sh` - configure platform + targets + build options
 * `ipxe.conf` - the [embedded iPXE script](http://ipxe.org/embed)
+* `config/branding.h` - custom branding/text
+* `config/general.h` - features
+
 
 License
 ------------------------------
