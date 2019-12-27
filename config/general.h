@@ -141,7 +141,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define DIGEST_CMD            /* Image crypto digest commands */
 //#define LOTEST_CMD            /* Loopback testing commands */
 //#define VLAN_CMD              /* VLAN commands */
-#define PXE_CMD               /* PXE commands */
+//#define PXE_CMD               /* PXE commands */
 #define REBOOT_CMD            /* Reboot command */
 #define POWEROFF_CMD          /* Power off command */
 #define IMAGE_TRUST_CMD       /* Image trust management commands */
@@ -192,7 +192,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #undef  GDBSERIAL               /* Remote GDB debugging over serial */
 #undef  GDBUDP                  /* Remote GDB debugging over UDP
                                  * (both may be set) */
-#define EFI_DOWNGRADE_UX      /* Downgrade UEFI user experience */
+//#define EFI_DOWNGRADE_UX      /* Downgrade UEFI user experience */
 //#define TIVOLI_VMM_WORKAROUND   /* Work around the Tivoli VMM's garbling of SSE
 //                                 * registers when iPXE traps to it due to
 //                                 * privileged instructions */

@@ -6,8 +6,10 @@ docker build \
     .
 
 # run make
+docker container rm ipxe-env || echo "ok"
 docker run \
-    --rm \
+    --tty \
+    --interactive \
     --mount type=bind,source="$(pwd)"/target,target=/mnt/target \
-    ipxe-build \
-    /ipxebuild.sh
+    --name ipxe-env \
+    ipxe-build
