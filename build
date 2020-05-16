@@ -1,9 +1,19 @@
 #!/usr/bin/env bash
 
+# docker run args
+DOCKER_ARGS=""
+
 # build docker build-env
 docker build \
     -t ipxe-build \
     .
+
+# ipxe embedded config provided ?
+if [ -f "$1" ]; then
+    IPXE_CONF=$(realpath $1)
+    echo "embedded ipxe config [$IPXE_CONF]"
+    DOCKER_ARGS="--mount type=bind,source=$IPXE_CONF,target=/ipxe.conf,readonly"
+fi
 
 # run make
 docker container rm ipxe-env || echo "ok"
@@ -12,4 +22,5 @@ docker run \
     --interactive \
     --mount type=bind,source="$(pwd)"/target,target=/mnt/target \
     --name ipxe-env \
+    $DOCKER_ARGS \
     ipxe-build

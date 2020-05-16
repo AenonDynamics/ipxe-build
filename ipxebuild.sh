@@ -42,7 +42,14 @@ for TARGET in "${BUILD_TARGET[@]}"; do
 
     # build
     echo " >> building target ${PARTS[0]} as ${PARTS[1]}"
-    make $BUILD_OPT ${PARTS[0]}
+
+    # embedded config available ?
+    if [ -f /ipxe.conf ]; then
+        echo " >> using embedded script"
+        make $BUILD_OPT ${PARTS[0]} EMBED=/ipxe.conf
+    else
+        make $BUILD_OPT ${PARTS[0]}
+    fi
 
     # copy binary into bind mount - honor alias
     cp ${PARTS[0]} /mnt/target/${PARTS[1]}
