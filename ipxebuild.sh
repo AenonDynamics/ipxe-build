@@ -4,7 +4,7 @@ set -xe
 
 # makefile build options
 # use no-pie for 64bit gcc builds
-BUILD_OPT="EXTRA_CFLAGS=-fno-pie -j9"
+BUILD_OPT='EXTRA_CFLAGS="-fno-pie" -j9'
 
 # see http://ipxe.org/appnote/buildtargets#special_targets for build configurations
 declare -A BUILD_TARGET

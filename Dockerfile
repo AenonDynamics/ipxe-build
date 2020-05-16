@@ -9,7 +9,7 @@ RUN set -xe \
 
 # clone repo
 RUN set -xe \
-    && git clone http://git.ipxe.org/ipxe.git /tmp/build
+    && git clone https://github.com/AenonDynamics/ipxe.git /tmp/build
 
 # copy files
 COPY ipxebuild.sh /
