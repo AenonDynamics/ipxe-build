@@ -12,14 +12,11 @@ declare -A BUILD_TARGET
 # 32bit linux kernel like
 BUILD_TARGET[0]="bin-i386-pcbios/ipxe.lkrn ipxe.lkrn"
 
-# 64bit linux kernel like
-BUILD_TARGET[1]="bin-x86_64-pcbios/ipxe.lkrn ipxe64.lkrn"
-
 # 64bit PXE binary Headerless X86 assembly code
-BUILD_TARGET[2]="bin-x86_64-pcbios/ipxe.pxe ipxe64.pxe"
+BUILD_TARGET[1]="bin-x86_64-pcbios/ipxe.pxe ipxe64.pxe"
 
 # 64bit EFI executable
-BUILD_TARGET[3]="bin-x86_64-efi/ipxe.efi ipxe64.efi"
+BUILD_TARGET[2]="bin-x86_64-efi/ipxe.efi ipxe64.efi"
 
 # -------------------------------------------------------------------------------------
 
