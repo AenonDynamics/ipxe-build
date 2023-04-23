@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#  build-env
+sudo podman build \
+    -t ipxe-build \
+    .

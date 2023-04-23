@@ -52,13 +52,13 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  *
  */
 
-//#define DOWNLOAD_PROTO_TFTP     /* Trivial File Transfer Protocol */
+#undef  DOWNLOAD_PROTO_TFTP     /* Trivial File Transfer Protocol */
 #define DOWNLOAD_PROTO_HTTP     /* Hypertext Transfer Protocol */
-#undef  DOWNLOAD_PROTO_HTTPS    /* Secure Hypertext Transfer Protocol */
+#define DOWNLOAD_PROTO_HTTPS    /* Secure Hypertext Transfer Protocol */
 #undef  DOWNLOAD_PROTO_FTP      /* File Transfer Protocol */
 #undef  DOWNLOAD_PROTO_SLAM     /* Scalable Local Area Multicast */
 #undef  DOWNLOAD_PROTO_NFS      /* Network File System Protocol */
-#define DOWNLOAD_PROTO_FILE    /* Local filesystem access */
+#undef  DOWNLOAD_PROTO_FILE    /* Local filesystem access */
 
 /*
  * SAN boot protocols
@@ -69,7 +69,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #undef        SANBOOT_PROTO_AOE       /* AoE protocol */
 #undef        SANBOOT_PROTO_IB_SRP    /* Infiniband SCSI RDMA protocol */
 #undef        SANBOOT_PROTO_FCP       /* Fibre Channel protocol */
-//#undef        SANBOOT_PROTO_HTTP      /* HTTP SAN protocol */
+#undef        SANBOOT_PROTO_HTTP      /* HTTP SAN protocol */
 
 /*
  * HTTP extensions
@@ -110,7 +110,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define       IMAGE_SCRIPT            /* iPXE script image support */
 //#define       IMAGE_BZIMAGE           /* Linux bzImage image support */
 //#define       IMAGE_COMBOOT           /* SYSLINUX COMBOOT image support */
-//#define       IMAGE_EFI               /* EFI image support */
+#define       IMAGE_EFI               /* EFI image support */
 //#define       IMAGE_SDI               /* SDI image support */
 //#define       IMAGE_PNM               /* PNM image support */
 #define IMAGE_PNG               /* PNG image support */
@@ -131,7 +131,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define ROUTE_CMD               /* Routing table management commands */
 #define IMAGE_CMD               /* Image management commands */
 #define DHCP_CMD                /* DHCP management commands */
-#define SANBOOT_CMD             /* SAN boot commands */
+//#define SANBOOT_CMD             /* SAN boot commands */
 //#define MENU_CMD                /* Menu commands */
 //#define LOGIN_CMD               /* Login command */
 #define SYNC_CMD                /* Sync command */

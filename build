@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # docker run args
-DOCKER_ARGS=""
+PODMAN_ARGS=""
 
-# build docker build-env
-docker build \
+# build build-env
+sudo podman build \
     -t ipxe-build \
     .
 
@@ -12,15 +12,19 @@ docker build \
 if [ -f "$1" ]; then
     IPXE_CONF=$(realpath $1)
     echo "embedded ipxe config [$IPXE_CONF]"
-    DOCKER_ARGS="--mount type=bind,source=$IPXE_CONF,target=/ipxe.conf,readonly"
+    PODMAN_ARGS="--mount type=bind,source=$IPXE_CONF,target=/ipxe.conf,readonly"
+
+    # remove argument from list
+    shift
 fi
 
 # run make
-docker container rm ipxe-env || echo "ok"
-docker run \
+sudo podman container rm ipxe-env || echo "ok"
+sudo podman run \
     --tty \
     --interactive \
     --mount type=bind,source="$(pwd)"/target,target=/mnt/target \
     --name ipxe-env \
-    $DOCKER_ARGS \
-    ipxe-build
+    $PODMAN_ARGS \
+    ipxe-build \
+    $@

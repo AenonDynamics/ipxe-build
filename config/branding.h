@@ -26,7 +26,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  */
 #define PRODUCT_NAME "Aenon Dynamics iPXE bootloader"
 #define PRODUCT_SHORT_NAME "AE-iPXE"
-#define PRODUCT_URI "http://ipxe.org"
+#define PRODUCT_URI "https://github.com/AenonDynamics/ipxe"
 
 /*
  * Tag line

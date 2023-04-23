@@ -1,14 +1,14 @@
 iPXE build environment
 ==============================
 
-docker isolated, debian based, iPXE build environment
+container (podman) isolated, debian based, iPXE build environment
 
 Usage
 ------------------------------
 
-Just run `build.sh` to trigger the build - this will invoke the following procedures:
+Just run `build` to trigger the build - this will invoke the following procedures:
 
-1. build the docker image `pxe-build` which installs the toolchain and clones the Aenon Dynamics [iPXE repository](https://github.com/AenonDynamics/ipxe)
+1. build the podman image `pxe-build` which installs the toolchain and clones the Aenon Dynamics [iPXE repository](https://github.com/AenonDynamics/ipxe)
 2. executes the helper script `ipxebuild.sh` within a temporary container context based on `pxe-build`
 3. the helper script triggers `make` as well as copies the binary to `target/` dir via bind mount
 
@@ -29,16 +29,18 @@ Usage
 
 # embedded config
 ./build ipxe.conf
+
+# additional ipxe arguments using embedded config
+./build ipxe.conf CERT=ca.crt
 ```
 
 Config
 ------------------------------
 
-* `ipxebuild.sh` - configure platform + targets + build options
+* `build.conf` - configure platform + targets + build options
 * `ipxe.conf` - [embedded iPXE script demo](http://ipxe.org/embed)
 * `config/branding.h` - custom branding/text
 * `config/general.h` - features
-
 
 License
 ------------------------------
