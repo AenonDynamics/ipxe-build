@@ -1,4 +1,4 @@
-FROM debian:bullseye as build
+FROM debian:bookworm as build
 
 # install build dependencies
 RUN set -xe \
@@ -11,10 +11,17 @@ RUN set -xe \
 RUN set -xe \
     && git clone https://github.com/AenonDynamics/ipxe.git /tmp/build
 
+# origin ipxe mirror
+#RUN set -xe \
+#    && git clone https://github.com/ipxe/ipxe.git /tmp/build
+
 # copy files
 COPY entrypoint.sh /
 COPY build.conf /
 COPY config/ /tmp/build/src/config
+
+# override
+COPY src/ /tmp/build/src
 
 # parse CMD input
 ENTRYPOINT [ "/entrypoint.sh" ]
