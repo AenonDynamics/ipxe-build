@@ -1,3 +1,9 @@
+
+### 0.2.1 ###
+
+* Added: argument passthrough `podman-build-ipxe-env`
+* Removed: default `fno-pie` linker flag
+
 ### 0.2.0 ###
 
 * Changed: docker replaced by podman

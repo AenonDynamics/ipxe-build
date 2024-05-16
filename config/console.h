@@ -58,6 +58,17 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 /* Control which syslog() messages are generated.
  *
  * Note that this is not related in any way to CONSOLE_SYSLOG.
+ *  
+LOG_EMERG 	Emergency: system is unusable
+LOG_ALERT 	Alert: action must be taken immediately
+LOG_CRIT 	Critical: critical conditions
+LOG_ERR 	Error: error conditions
+LOG_WARNING 	Warning: warning conditions
+LOG_NOTICE 	Notice: normal but significant conditions
+LOG_INFO 	Informational: informational messages
+LOG_DEBUG 	Debug: debug-level messages
+LOG_ALL 	Log all messages
+LOG_NONE 	Do not log any messages 
  */
 #define	LOG_LEVEL	LOG_NONE
 
